@@ -4,7 +4,7 @@ resource "huaweicloud_cce_cluster" "mycce" {
   vpc_id                 = var.vpc_id
   subnet_id              = var.subnet_id
   cluster_version        = var.cluster_version
-  container_network_type = "vpc-router:"
+  container_network_type = "vpc-router"
   authentication_mode    = "rbac"
 }
 
