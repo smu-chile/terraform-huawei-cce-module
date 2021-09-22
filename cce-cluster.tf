@@ -4,7 +4,7 @@ resource "huaweicloud_cce_cluster" "mycce" {
   vpc_id                 = var.vpc_id
   subnet_id              = var.subnet_id
   cluster_version        = var.cluster_version
-  container_network_type = "overlay_l2"
+  container_network_type = "vpc-router:"
   authentication_mode    = "rbac"
 }
 
@@ -20,8 +20,9 @@ resource "huaweicloud_cce_node" "mynode" {
   cluster_id        = huaweicloud_cce_cluster.mycce.id
   name              = "${var.cluster_name}-node-${count.index}"
   flavor_id         = var.cce_node_flavor_id
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[0]
+  availability_zone = data.huaweicloud_availability_zones.myaz.names[count.index%length(data.huaweicloud_availability_zones.myaz.names)]
   key_pair          = huaweicloud_compute_keypair.cce-node.name
+  
 
   root_volume {
     size       = var.cce_node_root_size
