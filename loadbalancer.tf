@@ -5,6 +5,7 @@ data "huaweicloud_vpc_subnet" "subnet" {
 resource "huaweicloud_lb_loadbalancer" "loadbalancer" {
   name          = "${var.cluster_name}-lb"
   vip_subnet_id = data.huaweicloud_vpc_subnet.subnet.subnet_id
+  tags          = var.default_tags
 }
 
 resource "huaweicloud_vpc_eip" "eip-lb" {
@@ -17,6 +18,7 @@ resource "huaweicloud_vpc_eip" "eip-lb" {
     share_type  = "PER"
     charge_mode = "traffic"
   }
+  tags = var.default_tags
 }
 
 resource "huaweicloud_networking_eip_associate" "eip_1" {

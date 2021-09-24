@@ -42,7 +42,7 @@ variable "node_count" {
 }
 
 variable "volumetype" {
-  type = string
+  type        = string
   default     = "SSD"
   description = "Tipo de volumen, SATA o SSD"
 }
@@ -50,4 +50,8 @@ variable "volumetype" {
 variable "public_key" {
   type        = string
   description = "Public para conexión con nodos"
+}
+
+variable "default_tags" {
+  description = "tags by default"
 }
