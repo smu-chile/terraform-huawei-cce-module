@@ -27,7 +27,7 @@ resource "huaweicloud_cce_node" "mynode" {
   count             = var.node_count
   cluster_id        = huaweicloud_cce_cluster.mycce.id
   name              = "${var.cluster_name}-node-${count.index}"
-  flavor_id         = data.huaweicloud_compute_flavors.flavors[count.index].ids
+  flavor_id         = data.huaweicloud_compute_flavors.flavors[count.index].ids[0]
   availability_zone = data.huaweicloud_availability_zones.myaz.names[count.index % length(data.huaweicloud_availability_zones.myaz.names)]
   key_pair          = huaweicloud_compute_keypair.cce-node.name
 
