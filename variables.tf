@@ -22,6 +22,19 @@ variable "cce_node_root_size" {
   default     = "100"
   description = "Tamaño partición root en nodos"
 }
+
+variable "cce_node_cpu_core_count" {
+  type        = string
+  default     = "4"
+  description = "Numero de cores CPU"
+}
+
+variable "cce_node_memory_size" {
+  type        = string
+  default     = "8"
+  description = "Memoria RAM"
+}
+
 variable "subnet_id" {
   type        = string
   description = "Network ID de subnet"
