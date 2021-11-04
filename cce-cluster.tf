@@ -6,6 +6,7 @@ resource "huaweicloud_cce_cluster" "mycce" {
   cluster_version        = var.cluster_version
   container_network_type = "overlay_l2"
   authentication_mode    = "rbac"
+  multi_az               = "true"
 }
 
 resource "huaweicloud_compute_keypair" "cce-node" {
