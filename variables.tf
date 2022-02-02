@@ -20,6 +20,12 @@ variable "cce_node_data_size" {
   description = "Partition Size Data"
 }
 
+variable "cce_node_root_size" {
+  type        = string
+  default     = "100"
+  description = "Root partition size"
+}
+
 variable "private_subnet_id" {
   type        = string
   description = "Network ID de subnet"
