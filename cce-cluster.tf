@@ -15,19 +15,12 @@ resource "huaweicloud_compute_keypair" "cce-node" {
 
 data "huaweicloud_availability_zones" "myaz" {}
 
-data "huaweicloud_compute_flavors" "flavors" {
-  count             = var.node_count
-  availability_zone = data.huaweicloud_availability_zones.myaz.names[count.index % length(data.huaweicloud_availability_zones.myaz.names)]
-  performance_type  = "normal"
-  cpu_core_count    = var.cce_node_cpu_core_count
-  memory_size       = var.cce_node_memory_size
-}
 
 resource "huaweicloud_cce_node" "mynode" {
   count             = var.node_count
   cluster_id        = huaweicloud_cce_cluster.mycce.id
   name              = "${var.cluster_name}-node-${count.index}"
-  flavor_id         = data.huaweicloud_compute_flavors.flavors[count.index].ids[0]
+  flavor_id         = var.cce_node_flavor_id
   availability_zone = data.huaweicloud_availability_zones.myaz.names[count.index % length(data.huaweicloud_availability_zones.myaz.names)]
   key_pair          = huaweicloud_compute_keypair.cce-node.name
 
