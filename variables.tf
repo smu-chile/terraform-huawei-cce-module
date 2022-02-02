@@ -7,6 +7,13 @@ variable "cce_cluster_flavor_id" {
   default     = "cce.s1.small"
   description = "Huawei CCE Cluster Flavor id"
 }
+
+variable "cce_cluster_flavor_id" {
+  type        = string
+  default     = "s3.xlarge.4"
+  description = "Huawei CCE Nodes Flavor id"
+}
+
 variable "cce_node_data_size" {
   type        = string
   default     = "100"
