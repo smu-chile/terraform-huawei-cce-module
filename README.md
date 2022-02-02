@@ -39,10 +39,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cce_cluster_flavor_id"></a> [cce\_cluster\_flavor\_id](#input\_cce\_cluster\_flavor\_id) | Huawei CCE Cluster Flavor id | `string` | `"cce.s1.small"` | no |
-| <a name="input_cce_node_cpu_core_count"></a> [cce\_node\_cpu\_core\_count](#input\_cce\_node\_cpu\_core\_count) | Core Quantity | `string` | `"4"` | no |
 | <a name="input_cce_node_data_size"></a> [cce\_node\_data\_size](#input\_cce\_node\_data\_size) | Partition Size Data | `string` | `"100"` | no |
 | <a name="input_cce_node_flavor_id"></a> [cce\_node\_flavor\_id](#input\_cce\_node\_flavor\_id) | Huawei Instance flavor Id | `string` | `"s3.large.4"` | no |
-| <a name="input_cce_node_memory_size"></a> [cce\_node\_memory\_size](#input\_cce\_node\_memory\_size) | RAM | `string` | `"8"` | no |
 | <a name="input_cce_node_root_size"></a> [cce\_node\_root\_size](#input\_cce\_node\_root\_size) | Root partition size | `string` | `"100"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Cluster Name | `string` | n/a | yes |
 | <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | Kubernetes Version | `string` | `"v1.19.8-r1"` | no |
