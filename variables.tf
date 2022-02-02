@@ -8,7 +8,7 @@ variable "cce_cluster_flavor_id" {
   description = "Huawei CCE Cluster Flavor id"
 }
 
-variable "cce_cluster_flavor_id" {
+variable "cce_node_flavor_id" {
   type        = string
   default     = "s3.xlarge.4"
   description = "Huawei CCE Nodes Flavor id"
