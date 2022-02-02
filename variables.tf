@@ -12,28 +12,6 @@ variable "cce_node_data_size" {
   default     = "100"
   description = "Partition Size Data"
 }
-variable "cce_node_flavor_id" {
-  type        = string
-  default     = "s3.large.4"
-  description = "Huawei Instance flavor Id"
-}
-variable "cce_node_root_size" {
-  type        = string
-  default     = "100"
-  description = "Root partition size"
-}
-
-variable "cce_node_cpu_core_count" {
-  type        = string
-  default     = "4"
-  description = "Core Quantity"
-}
-
-variable "cce_node_memory_size" {
-  type        = string
-  default     = "8"
-  description = "RAM"
-}
 
 variable "private_subnet_id" {
   type        = string
