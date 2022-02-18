@@ -2,9 +2,9 @@ resource "huaweicloud_cce_cluster" "mycce" {
   name                   = "${var.cluster_name}-cluster"
   flavor_id              = var.cce_cluster_flavor_id
   vpc_id                 = var.vpc_id
-  eni_subnet_id              = var.private_subnet_id
+  subnet_id              = var.private_subnet_id
   cluster_version        = var.cluster_version
-  container_network_type = "eni"
+  container_network_type = "vpc-router"
   authentication_mode    = "rbac"
 }
 
