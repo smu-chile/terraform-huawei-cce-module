@@ -6,6 +6,7 @@ resource "huaweicloud_cce_cluster" "mycce" {
   cluster_version        = var.cluster_version
   container_network_type = "vpc-router"
   authentication_mode    = "rbac"
+  kube_proxy_mode        = "ipvs"
 }
 
 resource "huaweicloud_compute_keypair" "cce-node" {
