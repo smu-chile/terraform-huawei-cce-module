@@ -14,7 +14,7 @@ resource "huaweicloud_vpc_eip" "eip-lb" {
   }
   bandwidth {
     name        = "${var.cluster_name}-lb-eip-bw"
-    size        = 8
+    size        = 50
     share_type  = "PER"
     charge_mode = "traffic"
   }
