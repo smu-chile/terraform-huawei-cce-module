@@ -15,6 +15,3 @@ output "lb_subnet_id" {
 }
 
 
-data "huaweicloud_vpc_subnet" "subnet" {
-  id = var.public_subnet_id
-}
