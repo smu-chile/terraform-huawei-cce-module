@@ -19,12 +19,6 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
 
   l4_flavor_id = data.huaweicloud_elb_flavors.flavors.ids[0]
 
-  #Consul
-  bandwidth_size        = 50
-  bandwidth_charge_mode = "traffic"
-  iptype                = "5_bgp"
-  sharetype             = "PER"
-
   availability_zone = [
     data.huaweicloud_availability_zones.myaz.names[0],
     data.huaweicloud_availability_zones.myaz.names[1],
