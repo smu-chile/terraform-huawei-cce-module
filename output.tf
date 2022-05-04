@@ -7,11 +7,11 @@ output "lb_public_ip" {
 }
 
 output "lb_id" {
-  value = huaweicloud_elb_loadbalancer.basic.id
+  value = huaweicloud_elb_loadbalancer.loadbalancer.id
 }
 
 output "lb_subnet_id" {
-  value = huaweicloud_elb_loadbalancer.basic.ipv4_subnet_id
+  value = huaweicloud_elb_loadbalancer.loadbalancer.ipv4_subnet_id
 }
 
 
