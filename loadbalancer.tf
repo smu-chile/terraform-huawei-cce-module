@@ -23,7 +23,7 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
   bandwidth_size        = 50
   bandwidth_charge_mode = "traffic"
   iptype                = "5_bgp"
-  sharetype             = null
+  sharetype             = "PER"
 
   availability_zone = [
     data.huaweicloud_availability_zones.myaz.names[0],
