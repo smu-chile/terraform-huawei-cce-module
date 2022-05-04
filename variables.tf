@@ -67,3 +67,27 @@ variable "public_key" {
 variable "default_tags" {
   description = "tags by default"
 }
+
+variable "lb_bandwidth_size" {
+  type        = number
+  description = "loadbalancer bandwidth size"
+  default     = 50
+}
+
+variable "lb_share_type" {
+  type        = string
+  description = "loadbalancer share type"
+  default     = "PER"
+}
+
+variable "lb_charge_mode" {
+  type        = string
+  description = "loadbalancer charge mode traffic or bandwidth"
+  default     = "traffic"
+}
+
+variable "lb_max_connections" {
+  type        = number
+  description = "loadbalancer layer 4 max connections"
+  default     = 1000000
+}

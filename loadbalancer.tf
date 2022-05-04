@@ -5,7 +5,7 @@ data "huaweicloud_vpc_subnet" "subnet" {
 data "huaweicloud_elb_flavors" "flavors" {
   type = "L4"
   #Consul
-  max_connections = 1000000
+  max_connections = var.lb_max_connections
 }
 
 
@@ -25,6 +25,8 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
   ]
 
   ipv4_eip_id = huaweicloud_vpc_eip.eip-lb.id
+
+  tags = var.default_tags
 }
 
 
@@ -34,9 +36,9 @@ resource "huaweicloud_vpc_eip" "eip-lb" {
   }
   bandwidth {
     name        = "${var.cluster_name}-lb-eip-bw"
-    size        = 50
-    share_type  = "PER"
-    charge_mode = "traffic"
+    size        = var.lb_bandwidth_size
+    share_type  = var.lb_share_type
+    charge_mode = var.lb_charge_mode
   }
   tags = var.default_tags
 }
