@@ -3,7 +3,7 @@ data "huaweicloud_vpc_subnet" "subnet" {
 }
 
 data "huaweicloud_elb_flavors" "flavors" {
-  type            = "L4"
+  type = "L4"
   #Consul
   max_connections = 1000000
 }
@@ -15,13 +15,15 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
   description       = "Dedicated Loadbalancer for ${var.cluster_name}"
   cross_vpc_backend = true
 
-  vpc_id         = var.vpc_id
-  
+  vpc_id = var.vpc_id
+
   l4_flavor_id = data.huaweicloud_elb_flavors.flavors.ids[0]
-  
+
   #Consul
-  bandwidth_size = 50
-  bandwidth_charge_mode =  "traffic"
+  bandwidth_size        = 50
+  bandwidth_charge_mode = "traffic"
+  iptype                = "5_bgp"
+  sharetype             = null
 
   availability_zone = [
     data.huaweicloud_availability_zones.myaz.names[0],
