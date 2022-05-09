@@ -3,13 +3,15 @@ output "kubeconfig" {
 }
 
 output "lb_public_ip" {
-  value = huaweicloud_networking_eip_associate.eip_1.public_ip
+  value = huaweicloud_vpc_eip.eip-lb.address
 }
 
 output "lb_id" {
-  value = huaweicloud_lb_loadbalancer.loadbalancer.id
+  value = huaweicloud_elb_loadbalancer.loadbalancer.id
 }
 
 output "lb_subnet_id" {
-  value = huaweicloud_lb_loadbalancer.loadbalancer.vip_subnet_id
+  value = huaweicloud_elb_loadbalancer.loadbalancer.ipv4_subnet_id
 }
+
+
