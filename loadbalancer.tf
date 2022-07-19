@@ -25,7 +25,7 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
 }
 
 
-resource "huaweicloud_vpc_eip" "eip-lb" {
+resource "huaweicloud_vpc_eip" "eip_lb" {
   publicip {
     type = "5_bgp"
   }
