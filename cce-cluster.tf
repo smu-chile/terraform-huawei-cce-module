@@ -10,7 +10,7 @@ resource "huaweicloud_cce_cluster" "mycce" {
 }
 
 resource "huaweicloud_compute_keypair" "cce-node" {
-  name       = join(var.cluster_name,"-","node-keypair")
+  name       = join("-", [var.cluster_name, "node-keypair"])
   public_key = var.public_key
 }
 
