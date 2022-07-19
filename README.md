@@ -12,15 +12,6 @@ Please note that we strive to provide a comprehensive suite of documentation for
 | Name | Type |
 |------|------|
 | [Kubernetes Documentation](https://kubernetes.io/docs/home) | Resource |
-| [huaweicloud_cce_cluster.mycce](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/cce_cluster) | Resource |
-| [huaweicloud_cce_node.mynode](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/cce_node) | Resource |
-| [huaweicloud_compute_keypair.cce-node](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/compute_keypair) | Resource |
-| [huaweicloud_lb_loadbalancer.loadbalancer](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/lb_loadbalancer) | Resource |
-| [huaweicloud_networking_eip_associate.eip_1](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/networking_eip_associate) | Resource |
-| [huaweicloud_vpc_eip.eip-lb](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/vpc_eip) | Resource |
-| [huaweicloud_availability_zones.myaz](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/availability_zones) | Data Source |
-| [huaweicloud_compute_flavors.flavors](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/compute_flavors) | Data Source |
-| [huaweicloud_vpc_subnet.subnet](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/vpc_subnet) | Data Source |
 
 ## Available Features
 
@@ -30,23 +21,26 @@ Please note that we strive to provide a comprehensive suite of documentation for
 module "cce-cluster" {
   source = "github.com/smu-chile/terraform-huawei-cce-module?ref=v1.0.3"
 
-  cluster_name          = data.consul_keys.input.var.cluster_name
-  cce_cluster_flavor_id = data.consul_keys.input.var.cce_cluster_flavor_id
-  cce_node_data_size    = data.consul_keys.input.var.cce_node_data_size
-  cce_node_flavor_id    = data.consul_keys.input.var.cce_node_flavor_id
-  cce_node_root_size    = data.consul_keys.input.var.cce_node_root_size
-  private_subnet_id     = data.consul_keys.input.var.private_subnet_id
-  public_subnet_id      = data.consul_keys.input.var.public_subnet_id
-  vpc_id                = data.consul_keys.input.var.vpc_id
-  cluster_version       = data.consul_keys.input.var.cluster_version
-  node_count            = data.consul_keys.input.var.cce_node_count
-  volumetype            = data.consul_keys.input.var.cce_node_volumetype
-  public_key            = data.consul_keys.input.var.bastion_ssh_public_key
-  default_tags          = jsondecode(data.consul_keys.input.var.default_tags)
-  lb_bandwidth_size     = tonumber(data.consul_keys.input.var.lb_bandwidth_size)
-  lb_share_type         = data.consul_keys.input.var.lb_share_type
-  lb_charge_mode        = data.consul_keys.input.var.lb_charge_mode
-  lb_max_connections    = tonumber(data.consul_keys.input.var.lb_max_connections)
+  cluster_name              = ""
+  cce_cluster_flavor_id     = ""
+  cce_node_data_size        = ""
+  cce_node_flavor_id        = ""
+  cce_node_root_size        = ""
+  private_subnet_id         = ""
+  public_subnet_id          = ""
+  vpc_id                    = ""
+  cluster_version           = ""
+  node_count                = ""
+  volumetype                = ""
+  public_key                = ""
+  default_tags              = jsondecode(var.default_tags)
+  lb_bandwidth_size         = tonumber(var.lb_bandwidth_size)
+  lb_share_type             = ""
+  lb_charge_mode            = ""
+  lb_max_connections        = tonumber(lb_max_connections)
+  container_network_type    = ""
+  authentication_mode       = ""
+  kube_proxy_mode           = ""
 }
 ```
 
@@ -69,6 +63,16 @@ We are grateful to the community for contributing bugfixes and improvements! Ple
 | <a name="provider_huaweicloud"></a> [huaweicloud](#provider\_huaweicloud) | ~> 1.26.1 |
 
 ## Resources
+
+| [huaweicloud_cce_cluster.mycce](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/cce_cluster) | resource |
+| [huaweicloud_cce_node.mynode](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/cce_node) | resource |
+| [huaweicloud_compute_keypair.cce-node](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/compute_keypair) | resource |
+| [huaweicloud_lb_loadbalancer.loadbalancer](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/lb_loadbalancer) | resource |
+| [huaweicloud_networking_eip_associate.eip_1](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/networking_eip_associate) | resource |
+| [huaweicloud_vpc_eip.eip-lb](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/resources/vpc_eip) | resource |
+| [huaweicloud_availability_zones.myaz](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/availability_zones) | Data Source |
+| [huaweicloud_compute_flavors.flavors](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/compute_flavors) | data source |
+| [huaweicloud_vpc_subnet.subnet](https://registry.terraform.io/providers/huaweicloud/huaweicloud/latest/docs/data-sources/vpc_subnet) | data Source |
 
 ## Inputs
 
