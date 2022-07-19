@@ -80,3 +80,20 @@ variable "lb_max_connections" {
   type        = number
   description = "loadbalancer layer 4 max connections"
 }
+
+# Add to Inputs
+
+variable "container_network_type" {
+  type        = string
+  description = "The container network type: overlay_l2, underlay_ipvlan, vpc-router or eni"
+}
+
+variable "authentication_mode" {
+  type        = string
+  description = "The authentication mode of the cluster, possible values are x509 and rbac. Defaults to rbac"
+}
+
+variable "kube_proxy_mode" {
+  type        = string
+  description = "Specifies the service forwarding mode"
+}
