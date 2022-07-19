@@ -1,6 +1,6 @@
 # Huawei Cloud CCE Terraform module
 
-Terraform module which creates HuaweiCloud CCE (Kubernetes) resources
+Terraform module which creates HuaweiCloud CCE (Kubernetes) resources.
 ## Architecture Diagram
 
 ![Architecture Diagram](docs/images/architecture_diagram.png)
@@ -27,7 +27,6 @@ module "cce-cluster" {
   cce_node_flavor_id        = ""
   cce_node_root_size        = ""
   private_subnet_id         = ""
-  public_subnet_id          = ""
   vpc_id                    = ""
   cluster_version           = ""
   node_count                = ""
@@ -90,7 +89,6 @@ We are grateful to the community for contributing bugfixes and improvements! Ple
 | <a name="input_node_count"></a> [node\_count](#input\_node\_count) | Node Count | `number` | N/A| no |
 | <a name="input_private_subnet_id"></a> [private\_subnet\_id](#input\_private\_subnet\_id) | Specifies the ID of the subnet used to create the node which should be configured with a *DNS address*. Changing this parameter will create a new cluster resource. | `string` | N/A | yes |
 | <a name="input_public_key"></a> [public\_key](#input\_public\_key) | SSH Public Key | `string` | N/A | yes |
-| <a name="input_public_subnet_id"></a> [public\_subnet\_id](#input\_public\_subnet\_id) | Network ID de subnet | `string` | N/A | yes |
 | <a name="input_volumetype"></a> [volumetype](#input\_volumetype) | Volume Type, SATA o SSD | `string` | N/A | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Specifies the ID of the VPC used to create the node. Changing this parameter will create a new cluster resource. | `string` | N/A | yes |
 | <a name="container_network_type"></a> [container\_network\_type](#input\_container\_network\_type) | Specifies the container network type. Changing this parameter will create a new cluster resource. Possible values: **overlay_l2**: An overlay_l2 network built for containers by using Open vSwitch(OVS), **vpc-router**: An vpc-router network built for containers by using ipvlan and custom VPC routes, **eni**: A Yangtse network built for CCE Turbo cluster. The container network deeply integrates the native ENI capability of VPC, uses the VPC CIDR block to allocate container addresses, and supports direct connections between ELB and containers to provide high performance. | `string` | N/A | no |
@@ -105,3 +103,4 @@ We are grateful to the community for contributing bugfixes and improvements! Ple
 | <a name="output_lb_id"></a> [lb\_id](#output\_lb\_id) | N/A |
 | <a name="output_lb_public_ip"></a> [lb\_public\_ip](#output\_lb\_public\_ip) | N/A |
 | <a name="output_lb_subnet_id"></a> [lb\_subnet\_id](#output\_lb\_subnet\_id) | N/A |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
