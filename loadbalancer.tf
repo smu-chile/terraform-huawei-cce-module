@@ -2,9 +2,6 @@ data "huaweicloud_elb_flavors" "flavors" {
   type            = "L4"
   max_connections = var.lb_max_connections
 }
-
-
-
 resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
   name              = "${var.cluster_name}-elb"
   description       = "Dedicated Loadbalancer for ${var.cluster_name}"
@@ -23,8 +20,6 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
 
   tags = var.default_tags
 }
-
-
 resource "huaweicloud_vpc_eip" "eip_lb" {
   publicip {
     type = "5_bgp"
@@ -37,5 +32,3 @@ resource "huaweicloud_vpc_eip" "eip_lb" {
   }
   tags = var.default_tags
 }
-
-

@@ -35,5 +35,4 @@ resource "huaweicloud_cce_node" "mynode" {
   }
 
   tags = var.default_tags
-
 }
