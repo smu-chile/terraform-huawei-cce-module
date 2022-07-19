@@ -19,7 +19,7 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
     data.huaweicloud_availability_zones.myaz.names[1],
   ]
 
-  ipv4_eip_id = huaweicloud_vpc_eip.eip-lb.id
+  ipv4_eip_id = huaweicloud_vpc_eip.eip_lb.id
 
   tags = var.default_tags
 }

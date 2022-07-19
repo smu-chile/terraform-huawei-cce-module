@@ -4,7 +4,7 @@ output "kubeconfig" {
 }
 
 output "lb_public_ip" {
-  value = huaweicloud_vpc_eip.eip-lb.address
+  value = huaweicloud_vpc_eip.eip_lb.address
   description = "Public IP"
 }
 
