@@ -58,6 +58,7 @@ variable "public_key" {
 }
 
 variable "default_tags" {
+  type        = map(any)
   description = "Tags by default"
 }
 
