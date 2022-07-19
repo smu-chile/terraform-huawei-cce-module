@@ -9,7 +9,7 @@ resource "huaweicloud_cce_cluster" "mycce" {
   kube_proxy_mode        = var.kube_proxy_mode
 }
 
-resource "huaweicloud_compute_keypair" "cce-node" {
+resource "huaweicloud_compute_keypair" "cce_node" {
   name       = join("-", [var.cluster_name, "node-keypair"])
   public_key = var.public_key
 }
