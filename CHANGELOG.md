@@ -8,16 +8,16 @@ All notable changes to this project will be documented in this file.
 
 ### Fix
 
-- Change container_network_type to VPC network
-- change kube_proxy_mode to optimize performance
+- Change container_network_type to VPC Network
+- Change kube_proxy_mode to optimize performance
 - Change loadbalancer network bandwidth
 
 ## [1.0.1] - 2022-02-02
 
 ### Fix
 
-- remove data source for flavor id on cce nodes
-- add flavor id reference for cce nodes
+- Remove data source for flavor id on CCE nodes
+- Add flavor id reference for CCE nodes
 
 ## [1.0.0] - 2021-25-11
 

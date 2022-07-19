@@ -4,7 +4,6 @@ data "huaweicloud_vpc_subnet" "subnet" {
 
 data "huaweicloud_elb_flavors" "flavors" {
   type = "L4"
-  #Consul
   max_connections = var.lb_max_connections
 }
 
