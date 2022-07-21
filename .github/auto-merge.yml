@@ -4,7 +4,4 @@ updateBranch: true
 deleteBranchAfterMerge: true
 reportStatus: true
 
-minApprovals:
-  OWNER: 0
-
 mergeCommitMessage: "{title} (#{number})"
