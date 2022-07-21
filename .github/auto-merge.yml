@@ -5,6 +5,6 @@ deleteBranchAfterMerge: true
 reportStatus: true
 
 minApprovals:
-  COLLABORATOR: 0
+  OWNER: 0
 
 mergeCommitMessage: "{title} (#{number})"
