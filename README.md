@@ -84,6 +84,7 @@ We are grateful to the community for contributing bugfixes and improvements! Ple
 | <a name="input_cce_node_flavor_id"></a> [cce\_node\_flavor\_id](#input\_cce\_node\_flavor\_id) | Huawei Instance flavor Id | `string` | N/A | no |
 | <a name="input_cce_node_root_size"></a> [cce\_node\_root\_size](#input\_cce\_node\_root\_size) | Root partition size | `string` | N/A | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Cluster Name | `string` | N/A | yes |
+| <a name="enable_elb_loadbalancer"></a> [enable\_elb\_loadbalancer](#input\_enable\_elb\_loadbalancer) | Enable Elastic Load Balancer with your CCE Cluster | `string` | false | yes |
 | <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | Specifies the cluster version, defaults to the latest supported version. Changing this parameter will create a new cluster resource. | `string` | N/A | no |
 | <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | tags by default | `any` | N/A | yes |
 | <a name="input_node_count"></a> [node\_count](#input\_node\_count) | Node Count | `number` | N/A| no |

@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- Enable ELB LoadBalancer with bool option inside main.tf
+
 ## [1.0.3] - 2022-19-07
 
 ## [1.0.2] - 2022-21-02
