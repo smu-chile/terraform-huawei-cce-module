@@ -1,4 +1,4 @@
-# Huawei Cloud CCE Terraform module
+# Huawei Cloud CCE Terraform Module
 
 Terraform module which creates HuaweiCloud CCE (Kubernetes) resources.
 ## Architecture Diagram
