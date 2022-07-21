@@ -5,12 +5,12 @@ resource "huaweicloud_cce_cluster" "mycce" {
   subnet_id              = var.private_subnet_id
   cluster_version        = var.cluster_version
   container_network_type = var.container_network_type
-  authentication_mode    = "rbac"
-  kube_proxy_mode        = "ipvs"
+  authentication_mode    = var.authentication_mode
+  kube_proxy_mode        = var.kube_proxy_mode
 }
 
-resource "huaweicloud_compute_keypair" "cce-node" {
-  name       = "${var.cluster_name}-node-keypair"
+resource "huaweicloud_compute_keypair" "cce_node" {
+  name       = join("-", [var.cluster_name, "node-keypair"])
   public_key = var.public_key
 }
 
@@ -23,7 +23,7 @@ resource "huaweicloud_cce_node" "mynode" {
   name              = "${var.cluster_name}-node-${count.index}"
   flavor_id         = var.cce_node_flavor_id
   availability_zone = data.huaweicloud_availability_zones.myaz.names[count.index % length(data.huaweicloud_availability_zones.myaz.names)]
-  key_pair          = huaweicloud_compute_keypair.cce-node.name
+  key_pair          = huaweicloud_compute_keypair.cce_node.name
 
   root_volume {
     size       = var.cce_node_root_size
@@ -35,5 +35,4 @@ resource "huaweicloud_cce_node" "mynode" {
   }
 
   tags = var.default_tags
-
 }

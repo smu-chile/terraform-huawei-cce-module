@@ -1,15 +1,7 @@
-data "huaweicloud_vpc_subnet" "subnet" {
-  id = var.public_subnet_id
-}
-
 data "huaweicloud_elb_flavors" "flavors" {
-  type = "L4"
-  #Consul
+  type            = "L4"
   max_connections = var.lb_max_connections
 }
-
-
-
 resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
   name              = "${var.cluster_name}-elb"
   description       = "Dedicated Loadbalancer for ${var.cluster_name}"
@@ -24,13 +16,11 @@ resource "huaweicloud_elb_loadbalancer" "loadbalancer" {
     data.huaweicloud_availability_zones.myaz.names[1],
   ]
 
-  ipv4_eip_id = huaweicloud_vpc_eip.eip-lb.id
+  ipv4_eip_id = huaweicloud_vpc_eip.eip_lb.id
 
   tags = var.default_tags
 }
-
-
-resource "huaweicloud_vpc_eip" "eip-lb" {
+resource "huaweicloud_vpc_eip" "eip_lb" {
   publicip {
     type = "5_bgp"
   }
@@ -42,5 +32,3 @@ resource "huaweicloud_vpc_eip" "eip-lb" {
   }
   tags = var.default_tags
 }
-
-
