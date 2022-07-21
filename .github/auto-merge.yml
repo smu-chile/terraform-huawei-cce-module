@@ -16,7 +16,5 @@ blockingLabels:
 rules:
 - minApprovals:
     OWNER: 0
-- requiredLabels:
-  - merge
 
 mergeCommitMessage: "{title} (#{number})"
