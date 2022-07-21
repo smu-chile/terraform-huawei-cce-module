@@ -91,3 +91,9 @@ variable "lb_max_connections" {
   description = "loadbalancer layer 4 max connections"
   default     = 1000000
 }
+
+variable "container_network_type" {
+  type        = string
+  description = "CCE Cluster container network type"
+  default     = "vpc-router"
+}
