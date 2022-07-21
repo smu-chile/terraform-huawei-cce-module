@@ -19,7 +19,7 @@ Please note that we strive to provide a comprehensive suite of documentation for
 
 ```hcl
 module "cce-cluster" {
-  source = "github.com/jveraduran/terraform-huawei-cce-module?ref=v1.0.3"
+  source = "github.com/smu-chile/terraform-huawei-cce-module?ref=v1.1.0"
 
   cluster_name              = ""
   cce_cluster_flavor_id     = ""
