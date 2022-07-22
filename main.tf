@@ -39,7 +39,7 @@ module "loadbalancer" {
   count  = var.enable_elb_loadbalancer == true ? 1 : 0
   source = "./modules/load-balancer"
 
-  cluster_name       = "${var.cluster_name}-cluster"
+  cluster_name       = var.cluster_name
   vpc_id             = var.vpc_id
   default_tags       = var.default_tags
   lb_bandwidth_size  = var.lb_bandwidth_size
