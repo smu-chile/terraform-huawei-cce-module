@@ -3,14 +3,14 @@ output "kubeconfig" {
   description = "kubeconfig"
 }
 output "lb_public_ip" {
-  value       = toset(module.loadbalancer[0].lb_public_ip)
+  value       = module.loadbalancer[0].lb_public_ip
   description = "Public IP"
 }
 output "lb_id" {
-  value       = toset(module.loadbalancer[0].lb_id)
+  value       = module.loadbalancer[0].lb_id
   description = "LoadBalancer ID"
 }
 output "lb_subnet_id" {
-  value       = toset(module.loadbalancer[0].lb_subnet_id)
+  value       = module.loadbalancer[0].lb_subnet_id
   description = "LoadBalancer Subnet ID"
 }
