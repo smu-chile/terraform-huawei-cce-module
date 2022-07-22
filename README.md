@@ -15,6 +15,7 @@ Please note that we strive to provide a comprehensive suite of documentation for
 
 ## Available Features
 
++ Huawei ELB Load Balancer
 ## Usage
 
 ```hcl
@@ -40,6 +41,8 @@ module "cce-cluster" {
   container_network_type    = ""
   authentication_mode       = ""
   kube_proxy_mode           = ""
+
+  enable_elb_loadbalancer   = true
 }
 ```
 
@@ -60,6 +63,12 @@ We are grateful to the community for contributing bugfixes and improvements! Ple
 | Name | Version |
 |------|---------|
 | <a name="provider_huaweicloud"></a> [huaweicloud](#provider\_huaweicloud) | ~> 1.26.1 |
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="load-balancer"></a> [load-balancer](#module\_loadbalancer) | ./modules/load-balancer | n/a |
 
 ## Resources
 
