@@ -97,3 +97,15 @@ variable "container_network_type" {
   description = "CCE Cluster container network type"
   default     = "vpc-router"
 }
+
+variable "authentication_mode" {
+  type        = string
+  description = "Specifies the authentication mode of the cluster, possible values are rbac and authenticating_proxy. Defaults to rbac. Changing this parameter will create a new cluster resource."
+  default     = "vpc-router"
+}
+
+variable "kube_proxy_mode" {
+  type        = string
+  description = "Specifies the service forwarding mode. Changing this parameter will create a new cluster resource. Two modes are available: iptables: Traditional kube-proxy uses iptables rules to implement service load balancing. In this mode, too many iptables rules will be generated when many services are deployed. In addition, non-incremental updates will cause a latency and even obvious performance issues in the case of heavy service traffic. ipvs: Optimized kube-proxy mode with higher throughput and faster speed. This mode supports incremental updates and can keep connections uninterrupted during service updates. It is suitable for large-sized clusters."
+  default     = "vpc-router"
+}
