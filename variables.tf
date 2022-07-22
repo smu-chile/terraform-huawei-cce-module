@@ -62,8 +62,6 @@ variable "lb_max_connections" {
   type        = number
   description = "loadbalancer layer 4 max connections"
 }
-
-# Add to Inputs
 variable "container_network_type" {
   type        = string
   description = "The container network type: overlay_l2, underlay_ipvlan, vpc-router or eni"
@@ -75,4 +73,10 @@ variable "authentication_mode" {
 variable "kube_proxy_mode" {
   type        = string
   description = "Specifies the service forwarding mode"
+}
+
+variable "enable_elb_loadbalancer" {
+  type        = bool
+  default     = false
+  description = "Specifies if you want a create a ELB"
 }
