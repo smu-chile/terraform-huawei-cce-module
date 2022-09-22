@@ -109,3 +109,29 @@ variable "kube_proxy_mode" {
   description = "Specifies the service forwarding mode. Changing this parameter will create a new cluster resource. Two modes are available: iptables: Traditional kube-proxy uses iptables rules to implement service load balancing. In this mode, too many iptables rules will be generated when many services are deployed. In addition, non-incremental updates will cause a latency and even obvious performance issues in the case of heavy service traffic. ipvs: Optimized kube-proxy mode with higher throughput and faster speed. This mode supports incremental updates and can keep connections uninterrupted during service updates. It is suitable for large-sized clusters."
   default     = "vpc-router"
 }
+
+# Second Loadbalancer
+
+variable "lb_max_connections_two" {
+  type        = number
+  description = "Second loadbalancer layer 4 max connections"
+  default     = 1000000
+}
+
+variable "lb_share_type_two" {
+  type        = string
+  description = "Second loadbalancer share type"
+  default     = "PER"
+}
+
+variable "lb_charge_mode_two" {
+  type        = string
+  description = "Second loadbalancer charge mode traffic or bandwidth"
+  default     = "traffic"
+}
+
+variable "lb_max_connections_two" {
+  type        = number
+  description = "Second loadbalancer layer 4 max connections"
+  default     = 1000000
+}
