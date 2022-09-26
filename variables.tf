@@ -112,6 +112,12 @@ variable "kube_proxy_mode" {
 
 # Second Loadbalancer
 
+variable "lb_has_second" {
+  type        = bool
+  description = "If Cluster has a second loadbalancer"
+  default     = false
+}
+
 variable "lb_max_connections_two" {
   type        = number
   description = "Second loadbalancer layer 4 max connections"
@@ -128,10 +134,4 @@ variable "lb_charge_mode_two" {
   type        = string
   description = "Second loadbalancer charge mode traffic or bandwidth"
   default     = "traffic"
-}
-
-variable "lb_max_connections_two" {
-  type        = number
-  description = "Second loadbalancer layer 4 max connections"
-  default     = 1000000
 }
