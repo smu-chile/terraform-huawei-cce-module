@@ -6,6 +6,10 @@ output "lb_public_ip" {
   value = huaweicloud_vpc_eip.eip-lb.address
 }
 
+output "lb_public_ip_traefik" {
+  value = huaweicloud_vpc_eip.eip-lb-traefik.address
+}
+
 output "lb_id" {
   value = huaweicloud_elb_loadbalancer.loadbalancer.id
 }
