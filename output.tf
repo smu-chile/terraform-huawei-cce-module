@@ -14,4 +14,10 @@ output "lb_subnet_id" {
   value = huaweicloud_elb_loadbalancer.loadbalancer.ipv4_subnet_id
 }
 
+output "lb_id_traefik" {
+  value = huaweicloud_elb_loadbalancer.loadbalancer_traefik.id
+}
 
+output "lb_traefik_subnet_id" {
+  value = huaweicloud_elb_loadbalancer.loadbalancer_traefik.ipv4_subnet_id
+}
